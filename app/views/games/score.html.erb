@@ -1,0 +1,21 @@
+<h1>Result</h1>
+
+<% if @in_grid && @valid %>
+  <p><strong>Congratulations </strong><%= @user_input %> is a valid English word!</p>
+  <p>Time: <%= @time %> seconds</p>
+  <p>Word length: <%= @length %></p>
+  <p>Score: <%= @score %></p>
+
+
+<% end %>
+
+<% if !@in_grid %>
+  <p>Sorry! but <%= @user_input %> can't be buit out of <%= @letters_original %></p>
+<% end %>
+
+<% if !@valid %>
+  <p>Sorry! but <%= @user_input %> does not seem to be a valid word</p>
+<% end %>
+
+
+<%= link_to "Play again", new_path %>
